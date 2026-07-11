@@ -1,6 +1,8 @@
 # Satellite Telemetry Simulator
 
 A Python-based satellite telemetry simulator that generates simulated CubeSat telemetry packets.
+![Satellite Telemetry Simulator](assets/satellite-telemetry-banner.png)
+
 
 ## Project Goal
 
