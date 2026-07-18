@@ -1,9 +1,11 @@
 from telemetry import generate_telemetry_packet #Από το αρχείο telemetry.py, φέρε μου τη συνάρτηση generate_telemetry_packet
+import time # Φέρνουμε στην Python την βιβλιοθήκη time
 
-NUMBER_OF_PACKETS = 5 # Ορίζω πόσα telemetry packets χρειάζομαι (Κεφαλαία λόγω χρήσης ως σταθερής τιμής)
+NUMBER_OF_PACKETS = 5 # Ορίζω πόσα telemetry packets χρειάζομαι (Κεφαλαία λόγω χρήσης ως σταθερής τιμής).
+TRANSMISSION_DELAY_SECONDS = 1 # Ορίζω το Delay μεαξύ των αποτελεσμάτων.
 
 
-for packet_number in range(1, NUMBER_OF_PACKETS + 1):
+for packet_number in range(1, NUMBER_OF_PACKETS + 1): #με NUMBER_OF_PACKETS = 5, γίνεται ουσιαστικά: range(1, 6) Στην Python το range(1, 6) δίνει: 1, 2, 3, 4, 5
     telemetry = generate_telemetry_packet() # Εκτελώ την συνάρτηση και την αποθηκεύω στην μεταβλητή telemetry π
 
     print(f"Satellite Telemetry Packet #{packet_number}")
@@ -17,5 +19,7 @@ for packet_number in range(1, NUMBER_OF_PACKETS + 1):
     print(f"Speed: {telemetry['speed_km_s']} km/s")
     print(f"Signal Strength: {telemetry['signal_strength_dbm']} dBm")
     print(f"System Status: {telemetry['system_status']}")
-    print()                                             # Αφήνω κενή γραμμή
+    print()                                             # Αφήνω κενή γραμμή.
+
+    time.sleep(TRANSMISSION_DELAY_SECONDS)
 # Συνεπώς εμφανίζει για αρχή απλό κείμενο όπως: Battery Voltage: και στην συνέχεια την τιμή της μεταβητής με το ειδικό χαρακτηριστικό στο τέλος
