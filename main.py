@@ -1,12 +1,14 @@
 from telemetry import generate_telemetry_packet #Από το αρχείο telemetry.py, φέρε μου τη συνάρτηση generate_telemetry_packet
 import time # Φέρνουμε στην Python την βιβλιοθήκη time
+from logger import save_telemetry_to_csv
 
 NUMBER_OF_PACKETS = 5 # Ορίζω πόσα telemetry packets χρειάζομαι (Κεφαλαία λόγω χρήσης ως σταθερής τιμής).
 TRANSMISSION_DELAY_SECONDS = 1 # Ορίζω το Delay μεαξύ των αποτελεσμάτων.
 
 
 for packet_number in range(1, NUMBER_OF_PACKETS + 1): #με NUMBER_OF_PACKETS = 5, γίνεται ουσιαστικά: range(1, 6) Στην Python το range(1, 6) δίνει: 1, 2, 3, 4, 5
-    telemetry = generate_telemetry_packet() # Εκτελώ την συνάρτηση και την αποθηκεύω στην μεταβλητή telemetry π
+    telemetry = generate_telemetry_packet() # Εκτελώ την συνάρτηση και την αποθηκεύω στην μεταβλητή telemetry
+    save_telemetry_to_csv(telemetry)
 
     print(f"Satellite Telemetry Packet #{packet_number}")
     print("--------------------------")
