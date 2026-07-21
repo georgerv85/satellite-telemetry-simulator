@@ -25,3 +25,4 @@ __pycache__/
 Thumbs.db
 
 telemetry_log.csv
+telemetry_log.json
