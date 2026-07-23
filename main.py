@@ -1,9 +1,7 @@
 import time # Φέρνουμε στην Python την βιβλιοθήκη time
 from telemetry import generate_telemetry_packet #Από το αρχείο telemetry.py, φέρε μου τη συνάρτηση generate_telemetry_packet
 from logger import save_telemetry_to_csv, save_telemetry_to_json
-
-NUMBER_OF_PACKETS = 5 # Ορίζω πόσα telemetry packets χρειάζομαι (Κεφαλαία λόγω χρήσης ως σταθερής τιμής).
-TRANSMISSION_DELAY_SECONDS = 1 # Ορίζω το Delay μεαξύ των αποτελεσμάτων.
+from config import NUMBER_OF_PACKETS, TRANSMISSION_DELAY_SECONDS
 
 
 for packet_number in range(1, NUMBER_OF_PACKETS + 1): #με NUMBER_OF_PACKETS = 5, γίνεται ουσιαστικά: range(1, 6) Στην Python το range(1, 6) δίνει: 1, 2, 3, 4, 5

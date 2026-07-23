@@ -1,9 +1,7 @@
 import csv #Εισάγω την βιβλιοθήκη csv. Την χρησιμοποιώ για να γράφω ή να διαβάζω csv αρχεία.
 import json # Εισάγω την βιβλιοθήκη json.
 import os #Εισάγω την βιβλιοθήκη os. Την χρησιμοποιώ για να ελέγξω αν υπάρχει ήδη το αρχείο telemetry_log.csv.
-
-CSV_FILE = "telemetry_log.csv" # Στην σταθερά αποθηκεύω το κείμενο "telemetry_log.csv - string -" (όρίζω το όνομα του αρχείου που θα αποθηκεύονται τα telemetry packets.)
-JSON_FILE = "telemetry_log.json" # Αποθηκεύω στην σταθερά το όνομα του αρχείου.
+from config import CSV_FILE, JSON_FILE
 
 def save_telemetry_to_csv(telemetry): # Δημιουργώ την συνάρτηση που δέχεται ως είσοδο ένα telemetry packet
     file_exists = os.path.isfile(CSV_FILE) # Εδώ ελέγχω αν υπάρχει ήδη το αρχείο telemetry_log.csv. Boolean έλεγχος.
