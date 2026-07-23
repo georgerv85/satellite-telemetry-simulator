@@ -1,11 +1,12 @@
 import time # Φέρνουμε στην Python την βιβλιοθήκη time
-from telemetry import generate_telemetry_packet #Από το αρχείο telemetry.py, φέρε μου τη συνάρτηση generate_telemetry_packet
 from logger import save_telemetry_to_csv, save_telemetry_to_json
 from config import NUMBER_OF_PACKETS, TRANSMISSION_DELAY_SECONDS
+from telemetry_source import get_telemetry_packet
 
 
 for packet_number in range(1, NUMBER_OF_PACKETS + 1): #με NUMBER_OF_PACKETS = 5, γίνεται ουσιαστικά: range(1, 6) Στην Python το range(1, 6) δίνει: 1, 2, 3, 4, 5
-    telemetry = generate_telemetry_packet() # Εκτελώ την συνάρτηση και την αποθηκεύω στην μεταβλητή telemetry
+    telemetry = get_telemetry_packet() # Εκτελώ την συνάρτηση και την αποθηκεύω στην μεταβλητή telemetry
+
 
     save_telemetry_to_csv(telemetry)
     save_telemetry_to_json(telemetry)

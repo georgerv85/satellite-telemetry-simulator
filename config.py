@@ -13,3 +13,6 @@ WEAK_SIGNAL_THRESHOLD_DBM = -90
 # Log files
 CSV_FILE = "telemetry_log.csv"    # Στην σταθερά αποθηκεύω το κείμενο "telemetry_log.csv - string -" (όρίζω το όνομα του αρχείου που θα αποθηκεύονται τα telemetry packets.)
 JSON_FILE = "telemetry_log.json"  # Αποθηκεύω στην σταθερά το όνομα του αρχείου.
+
+# Telemetry source mode
+TELEMETRY_SOURCE = "simulation"  # Δημιουργία telemetry packets εικονικά απο το software (προς το παρόν)
